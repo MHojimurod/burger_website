@@ -1,0 +1,60 @@
+{% load static %}
+<!-- footer -->
+<fooetr>
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+              <div class=" col-md-12">
+                <h2>Request  A<strong class="white"> Call  Back</strong></h2>
+              </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                    <form class="main_form" method="POST">
+                        <div class="row">
+                            {% csrf_token %}
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <input class="form-control" id="id_name" placeholder="Name" type="text" name="name" required maxlength="120">
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <input class="form-control" placeholder="Email" type="email" required maxlength="200" name="email" id="id_email">
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <input class="form-control" placeholder="Phone" type="text" maxlength="200" id="id_phone" name="phone">
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <textarea class="textarea" placeholder="Message" type="text" name="message" cols="40" rows="10" required="" id="id_message" style="max-height: 90px;"></textarea>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <button class="send">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="img-box">
+                        <figure><img src="{% static 'burger/images/img.jpg' %}" alt="img" /></figure>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer_logo">
+                      <a href="index.html"><img src="{% static 'burger/images/logo1.jpg' %}" alt="logo" /></a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <ul class="lik">
+                        <li  class="{% if 'home' in request.resolver_match.url_name %} active {% endif %}"> <a href="{% url 'home' %}">Home</a></li>
+                        <li  class="{% if 'about' in request.resolver_match.url_name %} active {% endif %}"> <a href="{% url 'about' %}">About</a></li>
+                        <li  class="{% if 'recipe' in request.resolver_match.url_name %} active {% endif %}"> <a href="{% url 'recipe' %}">Recipe</a></li>
+                        <li  class="{% if 'blog' in request.resolver_match.url_name %} active {% endif %}"> <a href="{% url 'blog' %}">blog</a></li>
+                        <li class="{% if 'contact' in request.resolver_match.url_name %} active {% endif %}"> <a href="{% url 'contact' %}">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12" style="margin-bottom:150px">
+                </div>
+            </div>
+        </div>
+    </div>
+</fooetr>
+<!-- end footer -->
