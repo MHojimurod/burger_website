@@ -14,3 +14,15 @@ class RegisterForm(forms.ModelForm):
         model = Register
         fields = '__all__'
 
+
+class AboutOurFoodForm(forms.ModelForm):
+    class Meta:
+        model = AboutOurFood
+        fields = '__all__'
+
+
+
+class OurblogForm(forms.ModelForm):
+    class Meta:
+        model = OurBlog
+        fields = '__all__'

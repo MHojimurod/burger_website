@@ -12,6 +12,12 @@ urlpatterns = [
     path('clients/', views.clients, name="Clients"),
     path('questions/', views.questions, name="Questions"),
     path('register/', views.register, name="Register"),
+    path('addblog/', views.add_blog, name="addblog"),
+    path('<int:pk>/editblog/', views.edit_blog, name="edit_blog"),
+    path('<int:pk>/deleteblog/', views.delete_blog, name="delete_blog"),
+    path('addfood/', views.add_about_food, name="addfood"),
+    path('<int:pk>/editfood/', views.edit_about_food, name="edit_food"),
+    path('<int:pk>/deletefood/', views.delete_about_food, name="delete_food"),
 
 
 ]

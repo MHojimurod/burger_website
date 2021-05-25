@@ -25,7 +25,7 @@
                 <h3 class="card-title">Blogs</h3>
 
                 <div class="card-tools">
-                    <div class="btn btn-block btn-success"><a style="color:white" href="#">Add</a></div>
+                    <div class="btn btn-block btn-success"><a style="color:white" href="{% url 'addblog' %}">Add</a></div>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -36,6 +36,8 @@
                       <th>#</th>
                       <th>Title</th>
                       <th>Date</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -44,6 +46,8 @@
                       <td>{{ forloop.counter }}</td>
                       <td>{{ i.title }}</td>
                       <td>{{ i.created_at }}</td>
+                      <td><div class="btn btn-block btn-success" style="background:#e6c60d;"><a style="color:white" href="{% url 'edit_blog' pk=i.id %}">Edit</a></div></td>
+                      <td><div class="btn btn-block btn-success" style="background:#b90e0a;"><a style="color:white" href="{% url 'delete_blog' pk=i.id %}">Delete</a></div></td>
                   {% endfor %}
                     </tr>
                   </tbody>

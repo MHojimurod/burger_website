@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Category List</h1>
+        <h1>Our foods</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -29,35 +29,20 @@
                   {% csrf_token %}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Admin</label>
-                      {{ form.phone }}
+                    <input class="form-control" placeholder="Title" type="text" name="title" maxlength="250" required="" id="id_title">
                   </div>
                 </div>
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Admin</label>
-                      {{ form.email }}
+                        <textarea style="max-height: 100px;" name="description" placeholder="Description" cols="40" rows="10" required="" id="id_description"></textarea>
                   </div>
                 </div>
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Admin</label>
-                      {{ form.name }}
+                    <label>Image</label>
+                      {{ form.image }}
                   </div>
                 </div>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label>Admin</label>
-                      {{ form.latitude }}
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label>Admin</label>
-                      {{ form.longitude }}
-                  </div>
-                </div>
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
 
